@@ -1,3 +1,26 @@
+
+
+    defaultValue={value}
+    value={value}
+
+
+       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
+        {new Array(state.sections).fill().map((_, index) => (
+          <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} />
+        ))}
+      </div>
+
+
+
+de: t('fruit.apple') -> Apfel
+de: t('fruits') -> Früchte
+
+Lang - Region
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
