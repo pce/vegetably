@@ -8,7 +8,26 @@ const state = {
       header: "Obst",
       image: "/miranda-fritz-NTvEVO77ris-unsplash.jpg",
       text: "Apfel, \nBirne...",
-      table: {}
+      table: {
+        'Apfel':	[[8,9,10,11],[1,2,3,4,5,12]],
+        'Aprikose':	[[7,8],[]],	
+        'Birne':	[[8,9,10],[11,12]],	
+        'Blaubeeren / Heidelbeeren':	[[6,7,8,9],[]],	
+        'Brombeeren':	[[7,8,9],[]],	
+        'Erdbeeren':	[[5,6,7],[]],	
+        'Himbeeren':	[[6,7,8],[]],	
+        'Holunderbeeren / Flieder':	[[9,10],[]],
+        'Johannisbeeren':	[[6,7,8],[]],
+        'Kirschen':	[[6,7,8],[]],
+        'Mirabellen':	[[7,8,9],[]],
+        'Pflaumen':	[[7,8,9],[]],
+        'Quitten':	[[9,10,11],[]],	
+        'Rhabarber':	[[4,5,6],[]],	
+        'Stachelbeeren':	[[6,7,8],[]],	
+        'Wassermelonen':	[[8,9],[]],	
+        'Weintrauben':	[[9,10,11],[]],	
+        'Zwetschgen':	[[7,8,9,10],[]],
+      }
     },
     {
       page: 2,
