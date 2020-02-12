@@ -19,10 +19,28 @@
 
 0. Highlight Current Month!
 
-1. Lang - Region (Lookup Languages JSON:  https://github.com/i18next/i18next/issues/644 
+1. Lang - Region (Lookup Languages JSON:  https://github.com/i18next/i18next/issues/644
   de: t('fruit.apple') -> Apfel
   de: t('fruits') -> Früchte
 )
+
+
+## Additional directives for HTTPS
+
+
+Apache:
+
+    <Directory /path/to/vhost/vegetably.com/httpdocs>
+
+        RewriteEngine on
+        # Don't rewrite files or directories
+        RewriteCond %{REQUEST_FILENAME} -f [OR]
+        RewriteCond %{REQUEST_FILENAME} -d
+        RewriteRule ^ - [L]
+        # Rewrite everything else to index.html to allow html5 state links
+        RewriteRule ^ index.html [L]
+
+    </Directory>
 
 
 ## CRA
