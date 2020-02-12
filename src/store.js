@@ -87,12 +87,28 @@ const state = {
         'Endiviensalat': [[5,6,7,8,9,10,12], []],
         'Feldsalat': [[1,2,3,4,10,11,12], []],
         'Kopfsalat': [[5,6,7,8,9,10], []],
-        'Lollo Rosso': [[5,6,7,8,9,10], []],
+        'Lollo Rosso': [[4,5,6,7,8,9], []],
         'Portulak': [[1,2,3,4,7,8,9,10,11,12], []],
         'Radicchio': [[8,9,10,11], [12,1,2]],
+        'Romana': [[6,7,8,9,10,11], []],
         'Rucola': [[4,5,6,7,8,9], []],
-    }
-  },
+      }
+    },
+    {
+        page: 4,
+        header: "Kräuter",
+        image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
+        text: "Welcher Salata hat wann Saison, \nregional und saisonal...",
+        table: {
+          'Dill': [[6,7,8], []],
+          'Majoran': [[6,7], []],
+          'Minze': [[1,2,3,4,5,6,7,8,9,10,11,12], []],
+          'Oregano': [[6,7,8,9], []],
+          'Rosmarin': [[6,7,8,9], []],
+          'Schnittlauch': [[3,4,5,6,7,8,9], []],
+          'Thymian': [[5,6,7,8,9], []],
+      }
+    },
   ],
   top: createRef()
 }
