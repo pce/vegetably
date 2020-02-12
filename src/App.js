@@ -38,10 +38,18 @@ const Table = ({data}) => {
   const table = []
 
   const cells = []
+
+  const curMonth = new Date().getMonth()
+
   // Table Head
   cells.push(<div className="cell label">{" "}</div>)
   Array(12).fill(1).map((i, month)=> {
-    cells.push(<div className="cell month">{month+1}</div>)
+    let classNames = ""
+    if (curMonth == month) {
+      classNames = "curmonth "
+    }
+    classNames += "cell month "
+    cells.push(<div className={classNames}>{month+1}</div>)
   })
   table.push (<div className="row">{cells}</div>)
 
@@ -54,15 +62,21 @@ const Table = ({data}) => {
       let months = data[val][0]
       let inmonths = data[val][1]
 
-
       Array(12).fill(1).map((i, month)=> {
+
+        let classNames = "cell "
+
         if (months.includes(month+1)) {
-          cells.push(<div className="cell outmonth">{" "}</div>)
+          classNames += "outmonth "
         } else if (inmonths.includes(month+1)) {
-          cells.push(<div className="cell inmonth">{" "}</div>)
+          classNames += "inmonth "
         } else {
-          cells.push(<div className="cell month">{" "}</div>)
+          if (curMonth == month) {
+            classNames += "curmonth "
+          }
+          classNames += "month "
         }
+        cells.push(<div className={classNames}>{" "}</div>)
       })
 
       table.push (<div className="row">{cells}</div>)

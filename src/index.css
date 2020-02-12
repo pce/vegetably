@@ -159,6 +159,9 @@ select {
   font-size: 8px;
 }
 
+.curmonth {
+  background-color:white;
+}
 
 @media screen and (min-width: 53em) {
 
