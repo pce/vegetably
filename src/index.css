@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sarina&display=swap');
+
+/*
+
+F2F3ED
+9CA9AB
+CA753D
+B2705A
+3C4C4F
+
+
+4d5645
+
+*/
 
 *,
 *::after,
@@ -18,33 +32,42 @@
 body {
   margin: 0;
   padding: 0;
-  background: #0c0f13;
-  overflow: hidden;
+  color: #3C4C4F;
+  /* overflow: hidden; */
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  color: #8b8b8b;
+  background-color: #F2F3ED;
   font-size: 0.9rem;
 }
 
+.brand {
+  font-family: 'Sarina', sans-serif;
+  margin: 0px;
+  display: inline;
+}
+
+
 a {
-  color: #545454;
+  color: #3C4C4F;
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  color: #8b8b8b;
+  color: #CA753D;
 }
 
+
+.loading {
+  padding: 10px;
+  /* transform: translate3d(-50%, -50%, 0); */
+  color: #9c9c9c;
+}
+
+/*
 #root {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-}
-
-.loading {
-  padding: 10px;
-  transform: translate3d(-50%, -50%, 0);
-  color: #8b8b8b;
 }
 
 .scrollArea {
@@ -55,17 +78,26 @@ a:hover {
   height: 100vh;
   overflow: auto;
 }
-
+*/
 
 .bottom-left {
   padding: 1.5rem;
 }
 
-
 .nav {
-  display: block;
+  width: 100%;
+  display: inline-block;
   height: 39px;
-  border-bottom: 1px solid #2ddab8;
+  border-bottom: 1px solid #CA753D;
+}
+
+
+.nav nav, .nav nav ul, .nav nav ul li {
+  display: inline;
+}
+
+.nav nav ul li {
+  padding-right: 12px;
 }
 
 .nav__lang {
@@ -73,18 +105,60 @@ a:hover {
   float: right;
 }
 
+footer {
+  text-align: right;
+}
+
+
 /* .paragraph {} */
+
+.content {
+  padding: 10px;
+}
 
 .paragraph img {
   height: 100px;
 }
 
 select {
-  background-color: #000;
-  color:#fff;
+  background-color: #F2F3ED;
+  color:#3C4C4F;
   border:none;
   padding:none;
 }
+
+.table {display:block; }
+.row {
+  display:block;
+  background-color:none;
+}
+.row:hover {   background-color:#fff; }
+.cell {display:inline-block;}
+
+.label { width: 240px; }
+
+.inmonth {
+  background-color:#B2705A;
+  border: #B2705A 1px solid;
+  width: 22px;
+  height: 12px;
+}
+
+.outmonth {
+  background-color:#CA753D;
+  border: #CA753D 1px solid;
+  width: 22px;
+  height: 12px;
+}
+
+.month {
+  background-color:none;
+  border: transparent 1px #3C4C4F;
+  width: 22px;
+  height: 12px;
+  font-size: 8px;
+}
+
 
 @media screen and (min-width: 53em) {
 
