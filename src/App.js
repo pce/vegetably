@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
   Link,
-  useParams
+  useParams,
+  useHistory
 } from "react-router-dom";
 
 // useEffect, useRef, useMemo
@@ -18,7 +19,6 @@ import Select from "./components/select"
 import t from "./t9n"
 
 
-/** { image, index, offset, factor, header, aspect, text }*/
 function Paragraph({text, image, table, multiLineText}) {
   return (
     <div className="paragraph">
@@ -30,32 +30,28 @@ function Paragraph({text, image, table, multiLineText}) {
   )
 }
 
-const onLangChange = (event) => {
-  window.lang = event.target.value
-}
+// const Image = ({src, className=""}) => {
+//   return (<img src={src} className={className} />)
+// }
 
 const Table = ({data}) => {
+
   const table = []
-
   const cells = []
-
   const curMonth = new Date().getMonth()
-
   // Table Head
   cells.push(<div className="cell label">{" "}</div>)
   Array(12).fill(1).map((i, month)=> {
     let classNames = ""
-    if (curMonth == month) {
+    if (curMonth === month) {
       classNames = "curmonth "
     }
     classNames += "cell month "
-    cells.push(<div className={classNames}>{month+1}</div>)
+    return cells.push(<div className={classNames}>{month+1}</div>)
   })
   table.push (<div className="row">{cells}</div>)
-
   // Table Data
   Object.keys(data).map((val, index) => {
-
       const cells = []
       cells.push(<div className="cell label">{val}</div>)
 
@@ -63,45 +59,46 @@ const Table = ({data}) => {
       let inmonths = data[val][1]
 
       Array(12).fill(1).map((i, month)=> {
-
-        let classNames = "cell "
-
+        let classNames  = "cell "
         if (months.includes(month+1)) {
           classNames += "outmonth "
         } else if (inmonths.includes(month+1)) {
           classNames += "inmonth "
         } else {
-          if (curMonth == month) {
+          if (curMonth === month) {
             classNames += "curmonth "
           }
           classNames += "month "
         }
-        cells.push(<div className={classNames}>{" "}</div>)
+        return cells.push(<div className={classNames}>{" "}</div>)
       })
-
-      table.push (<div className="row">{cells}</div>)
+      return table.push (<div className="row">{cells}</div>)
     }
   )
-
-
   return <div className="table">{table}</div>
 }
 
-const Image = ({src}) => {
-  return (<img src={src} />)
-}
 
 const Navbar = ({lang}) => {
+  let history = useHistory();
+
+  const onLangChange = (event) => {
+    window.lang = event.target.value
+    let url = '/' + window.lang + window.location.pathname.substring(3)
+    history.push(url);
+  }
+
+  // XXX global lang
   return (<>
     <div className="nav">
-      <h1 className="brand">Vegetably</h1>
+      <h1 className="brand"><Link to={"/" + window.lang}>Vegetably</Link></h1>
         <nav>
           <ul>
             <li>
-              <Link to={"/" + lang + "/"}>{t('Saisonkalender')}</Link>
+              <Link to={"/" + window.lang + "/seasonal-calendar"}>{t('Saisonkalender')}</Link>
             </li>
             <li>
-              <Link to={"/" + lang + "/about"}>{t('About')}</Link>
+              <Link to={"/" + window.lang + "/about"}>{t('About')}</Link>
             </li>
           </ul>
         </nav>
@@ -111,13 +108,12 @@ const Navbar = ({lang}) => {
 }
 
 function Content() {
-
+  // <link rel="canonical" href="https://vegetably.com/{lang}/" />
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Vegetably</title>
-        <link rel="canonical" href="https://vegetably.com" />
       </Helmet>
       <div className="content">
       {state.paragraphs.map(i =>
@@ -130,12 +126,31 @@ function Content() {
 }
 
 
+function Home({lang}) {
+  console.log('Home')
+  console.log(lang)
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Vegetably</title>
+      </Helmet>
+      <div className="content">
+        <Text value={state.home[lang].header} />
+        {/* <Image src={state.home[lang].image} className="home" /> */}
+        <MultilineText value={state.home[lang].text} />
+      </div>
+      <footer className="bottom-left">&copy; 2020 vegetably.com</footer>
+    </>
+  )
+}
+
 function About() {
+  // <link rel="canonical" href="https://vegetably.com/" />
   return (<>
     <Helmet>
       <meta charSet="utf-8" />
       <title>Vegetably</title>
-      <link rel="canonical" href="https://vegetably.com" />
     </Helmet>
     <div className="content">
       <h2>About</h2>
@@ -162,11 +177,14 @@ function App() {
 
   let { lang } = useParams();
 
-  if (lang)
+  if (lang) {
     window.lang = lang
-  else
-    lang = 'de'
-
+  } else {
+    lang = window.location.pathname.substring(1, 3) || 'de'
+    if (lang !== window.lang) {
+      window.lang = lang
+    }
+  }
 
   // const scrollArea = useRef()
   // const onScroll = e => (state.top.current = e.target.scrollTop)
@@ -175,17 +193,17 @@ function App() {
     <>
       <Suspense fallback={<div center className="loading" children="Loading..." />}>
           <Navbar lang={lang} />
-            {/* A <Switch> looks through its children <Route>s and
-                renders the first one that matches the current URL. */}
             <Switch>
+            <Route path="/:lang/seasonal-calendar">
+                <Content />
+              </Route>
               <Route path="/:lang/about">
                 <About />
               </Route>
               <Route path="/:lang?">
-                <Content />
+                <Home lang={lang} />
               </Route>
             </Switch>
-
       </Suspense>
     </>
   )

@@ -2,6 +2,18 @@ import { createRef } from "react"
 
 const state = {
   pages: 3,
+  home: {
+      de: {
+        image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
+        header: "Gemüse des Monats",
+        text: "Zur Planung der nächsten Mahlzeit nach saisonaler Verfügbarkeit"
+      },
+      en: {
+        image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
+        header: "Vegetable of the month",
+        text: "To plan the next meal based on seasonal availability"
+      }
+  },
   paragraphs: [
     {
       page: 1,
@@ -95,18 +107,18 @@ const state = {
       }
     },
     {
-        page: 4,
-        header: "Kräuter",
-        image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
-        text: "Welcher Salata hat wann Saison, \nregional und saisonal...",
-        table: {
-          'Dill': [[6,7,8], []],
-          'Majoran': [[6,7], []],
-          'Minze': [[1,2,3,4,5,6,7,8,9,10,11,12], []],
-          'Oregano': [[6,7,8,9], []],
-          'Rosmarin': [[6,7,8,9], []],
-          'Schnittlauch': [[3,4,5,6,7,8,9], []],
-          'Thymian': [[5,6,7,8,9], []],
+      page: 4,
+      header: "Kräuter",
+      image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
+      text: "Welcher Salata hat wann Saison, \nregional und saisonal...",
+      table: {
+        'Dill': [[6,7,8], []],
+        'Majoran': [[6,7], []],
+        'Minze': [[1,2,3,4,5,6,7,8,9,10,11,12], []],
+        'Oregano': [[6,7,8,9], []],
+        'Rosmarin': [[6,7,8,9], []],
+        'Schnittlauch': [[3,4,5,6,7,8,9], []],
+        'Thymian': [[5,6,7,8,9], []],
       }
     },
   ],
