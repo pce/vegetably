@@ -164,13 +164,13 @@ const t9n = {
         'Romana': 'Romana',
         'Rucola': 'ρόκα',
         // Herbs
-        'Dill': 'Dill',
-        'Majoran': 'Majoran',
-        'Minze': 'Minze',
-        'Oregano': 'Oregano',
-        'Rosmarin': 'Rosmarin',
-        'Schnittlauch': 'Schnittlauch',
-        'Thymian':'Thymian',
+        'Dill': 'άνηθο',
+        'Majoran': 'μαντζουράνα',
+        'Minze': 'μέντα',
+        'Oregano': 'ρίγανη',
+        'Rosmarin': 'δενδρολίβανο',
+        'Schnittlauch': 'βολβοί φαγώσιμοι',
+        'Thymian':'θυμάρι',
 
     },
     'en': {

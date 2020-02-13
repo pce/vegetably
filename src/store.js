@@ -23,7 +23,7 @@ const state = {
         header: "Vegetable of the month",
         text: "To plan the next meal based on seasonal availability"
       },
-      gr: {
+      el: {
         image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
         header: "Vegetable of the month",
         text: "To plan the next meal based on seasonal availability"
