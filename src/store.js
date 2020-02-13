@@ -27,6 +27,11 @@ const state = {
         image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
         header: "Vegetable of the month",
         text: "To plan the next meal based on seasonal availability"
+      },
+      sv: {
+        image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
+        header: "Vegetable of the month",
+        text: "To plan the next meal based on seasonal availability"
       }
   },
   paragraphs: [
@@ -77,7 +82,7 @@ const state = {
         'Kartoffeln': [[6,7,8,9,10],[1,2,3,4,5,11,12]],
         'Kohlrabi': [[5,6,7,8,9,10],[]],
         'Kürbis': [[8,9,10,11],[12,1,2]],
-        'Lauch (Frühlingszwieblen)': [[5,6,7,8,9,10],[]],
+        'Lauch (Frühlingszwiebeln)': [[5,6,7,8,9,10],[]],
         'Lauch / Porree': [[1,2,3,45,6,7,8,9,10,11,12],[]],
         'Mais': [[8,9,10],[]],
         'Mangold': [[5,6,7,8,9,10],[]],
