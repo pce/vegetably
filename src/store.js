@@ -12,11 +12,27 @@ const state = {
         image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
         header: "Vegetable of the month",
         text: "To plan the next meal based on seasonal availability"
+      },
+      pl: {
+        image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
+        header: "Vegetable of the month",
+        text: "To plan the next meal based on seasonal availability"
+      },
+      ja: {
+        image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
+        header: "Vegetable of the month",
+        text: "To plan the next meal based on seasonal availability"
+      },
+      gr: {
+        image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
+        header: "Vegetable of the month",
+        text: "To plan the next meal based on seasonal availability"
       }
   },
   paragraphs: [
     {
       page: 1,
+      region: 'de',
       header: "Obst",
       image: "/miranda-fritz-NTvEVO77ris-unsplash.jpg",
       text: "Welches Obst hat wann Saison, \nregional und saisonal...",
@@ -43,6 +59,7 @@ const state = {
     },
     {
       page: 2,
+      region: 'de',
       header: "Gemüse",
       image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       text: "Welches Gemüse hat wann Saison, \nregional und saisonal...",
@@ -88,9 +105,10 @@ const state = {
     },
     {
       page: 3,
+      region: 'de',
       header: "Salat",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
-      text: "Welcher Salata hat wann Saison, \nregional und saisonal...",
+      text: "Welcher Salat hat wann Saison, \nregional und saisonal...",
       table: {
         'Batavia': [[5,6,7,8,9], []],
         'Chicorée': [[1,2,3,4,10,11,12], []],
@@ -108,9 +126,10 @@ const state = {
     },
     {
       page: 4,
+      region: 'de',
       header: "Kräuter",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
-      text: "Welcher Salata hat wann Saison, \nregional und saisonal...",
+      text: "Welches Kraut hat wann Saison, \nregional und saisonal...",
       table: {
         'Dill': [[6,7,8], []],
         'Majoran': [[6,7], []],

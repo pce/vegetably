@@ -22,7 +22,7 @@ import t from "./t9n"
 function Paragraph({text, image, table, multiLineText}) {
   return (
     <div className="paragraph">
-      <Text value={text} />
+      <Text value={t(text)} />
       {/* <Image src={image} /> */}
       <Table data={table} />
       {/* <MultilineText value={multiLineText} /> */}
@@ -53,7 +53,7 @@ const Table = ({data}) => {
   // Table Data
   Object.keys(data).map((val, index) => {
       const cells = []
-      cells.push(<div className="cell label">{val}</div>)
+      cells.push(<div className="cell label">{t(val)}</div>)
 
       let months = data[val][0]
       let inmonths = data[val][1]
@@ -102,7 +102,7 @@ const Navbar = ({lang}) => {
             </li>
           </ul>
         </nav>
-      <Select options={{de:'de', en:'en', gr:'gr', jp:'jp', pl:'pl'}} onChange={onLangChange} className='nav__lang'  />
+      <Select options={{de:'de', en:'en', el:'el', ja:'ja', pl:'pl', sv:'sv'}} onChange={onLangChange} className='nav__lang'  />
     </div>
   </>)
 }
