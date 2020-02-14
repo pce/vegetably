@@ -4,46 +4,40 @@ const state = {
   pages: 3,
   home: {
     teaser_month: {
-      0: {text: 'Chicorée'},
-      1: {text:'Feldsalat'},
-      2: {text:'Spinat'},
-      3: {text:'Rhabarber'},
-      4: {text:'Aubergine'},
-      5:{text: 'Blaubeeren / Heidelbeeren'},
-      6:{text: 'Brokkoli'},
-      7:{text: 'Zucchini'},
-      8:{text: 'Radicchio'},
-      9:{text: 'Lauch / Porree'},
-      10:{text: 'Rosenkohl'},
-      11:{text: 'Grünkohl'},
+      0:  {text: 'Chicorée'},
+      1:  {text: 'Feldsalat'},
+      2:  {text: 'Spinat'},
+      3:  {text: 'Rhabarber'},
+      4:  {text: 'Aubergine'},
+      5:  {text: 'Blaubeeren / Heidelbeeren'},
+      6:  {text: 'Brokkoli'},
+      7:  {text: 'Zucchini'},
+      8:  {text: 'Radicchio'},
+      9:  {text: 'Lauch / Porree'},
+      10: {text: 'Rosenkohl'},
+      11: {text: 'Grünkohl'},
     },
     de: {
-      image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       header: "Gemüse des Monats",
-      text: "Zur Planung der nächsten Mahlzeit nach saisonaler Verfügbarkeit",
+      text: "Zur Planung der nächsten Mahlzeit mit Freilandware nach saisonaler Verfügbarkeit",
     },
     en: {
-      image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       header: "Vegetable of the month",
       text: "To plan the next meal based on seasonal availability"
     },
     pl: {
-      image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       header: "Vegetable of the month",
       text: "To plan the next meal based on seasonal availability"
     },
     ja: {
-      image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       header: "Vegetable of the month",
       text: "To plan the next meal based on seasonal availability"
     },
     el: {
-      image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       header: "Vegetable of the month",
       text: "To plan the next meal based on seasonal availability"
     },
     sv: {
-      image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       header: "Vegetable of the month",
       text: "To plan the next meal based on seasonal availability"
     }
