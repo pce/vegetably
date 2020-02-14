@@ -112,8 +112,7 @@ function Content() {
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Vegetably</title>
+        <title>Vegetably :: {t('Saisonkalender')}</title>
       </Helmet>
       <div className="content">
       {state.paragraphs.map(i =>
@@ -127,13 +126,10 @@ function Content() {
 
 
 function Home({lang}) {
-  console.log('Home')
-  console.log(lang)
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Vegetably</title>
+        <title>Vegetably :: Home</title>
       </Helmet>
       <div className="content">
         <Text value={state.home[lang].header} />
@@ -150,7 +146,7 @@ function About() {
   return (<>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>Vegetably</title>
+      <title>Vegetably :: {t('About')}</title>
     </Helmet>
     <div className="content">
       <h2>About</h2>
