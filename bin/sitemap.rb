@@ -12,7 +12,7 @@ require 'nokogiri'
   {url:"/en/about"},
 ]
 
-@base_url = "https://vegetable.com"
+@base_url = "https://vegetably.com"
 
 b = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
   xml.urlset('xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9') {
