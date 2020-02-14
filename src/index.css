@@ -116,6 +116,12 @@ footer {
   padding: 10px;
 }
 
+.home {
+  background-image: url(./Angelo_Gemmi_olive_tree_branch.svg) ;
+  background-repeat: no-repeat;
+  background-position: 90% 90%;
+}
+
 .paragraph img {
   height: 100px;
 }

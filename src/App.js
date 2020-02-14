@@ -126,15 +126,21 @@ function Content() {
 
 
 function Home({lang}) {
+
+  let curMonth = new Date().getMonth()
+  let text = t(state.home.teaser_month[curMonth].text)
+
   return (
     <>
       <Helmet>
         <title>Vegetably :: Home</title>
       </Helmet>
-      <div className="content">
+      <div className="content home">
         <Text value={state.home[lang].header} />
+        <Text value={text} />
         {/* <Image src={state.home[lang].image} className="home" /> */}
         <MultilineText value={state.home[lang].text} />
+
       </div>
       <footer className="bottom-left">&copy; 2020 vegetably.com</footer>
     </>
@@ -145,7 +151,6 @@ function About() {
   // <link rel="canonical" href="https://vegetably.com/" />
   return (<>
     <Helmet>
-      <meta charSet="utf-8" />
       <title>Vegetably :: {t('About')}</title>
     </Helmet>
     <div className="content">
