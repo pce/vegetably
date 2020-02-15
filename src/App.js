@@ -124,11 +124,51 @@ function Content() {
   )
 }
 
+function E404 () {
+  return (
+  <>
+    <Helmet>
+      <title>Vegetably :: 404</title>
+    </Helmet>
+    <div className="content home">
+      <Text value="Ooops, missing content" />
+      <MultilineText value={"Sorry, we coundn't find anything"} />
+    </div>
+    <footer className="bottom-left">&copy; 2020 vegetably.com</footer>
+  </>)
+}
+
+function ItemLink({text}) {
+  return (<h2>
+      <a href={`/${window.lang}/${text.toLowerCase()}`} >{text}</a>
+    </h2>)
+}
+
+function titleCase(str) {
+  var splitStr = str.toLowerCase().split(' ');
+  for (var i = 0; i < splitStr.length; i++) {
+      // You do not need to check if i is larger than splitStr length, as your for does that for you
+      // Assign it back to the array
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+  }
+  // Directly return the joined string
+  return splitStr.join(' ');
+}
+
+function Item(props) {
+  const name = t(titleCase(props.match.params.name))
+  if (!name) {
+    return <E404 />
+  }
+  return <>
+    <h1>{name}</h1>
+  </>
+}
+
 
 function Home({lang}) {
 
-  let curMonth = new Date().getMonth()
-  let text = t(state.home.teaser_month[curMonth].text)
+  let text = t(state.home.teaser_month[new Date().getMonth()].text)
 
   return (
     <>
@@ -137,7 +177,7 @@ function Home({lang}) {
       </Helmet>
       <div className="content home">
         <Text value={state.home[lang].header} />
-        <Text value={text} tag='h2' />
+        <ItemLink text={text} />
         {/* <Image src={state.home[lang].image} className="home" /> */}
         <MultilineText value={state.home[lang].text} />
 
@@ -195,12 +235,13 @@ function App() {
       <Suspense fallback={<div center className="loading" children="Loading..." />}>
           <Navbar lang={lang} />
             <Switch>
-            <Route path="/:lang/seasonal-calendar">
+              <Route path="/:lang/seasonal-calendar">
                 <Content />
               </Route>
               <Route path="/:lang/about">
                 <About />
               </Route>
+              <Route path="/:lang/:name" component={Item} />
               <Route path="/:lang?">
                 <Home lang={lang} />
               </Route>
