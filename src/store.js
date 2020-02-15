@@ -42,9 +42,9 @@ const state = {
       text: "Att planera nästa måltid baserat på säsongens tillgänglighet"
     }
   },
-  paragraphs: [
+  seasonalCalender: [
     {
-      page: 1,
+      subpage: 1,
       region: 'de',
       header: "Obst",
       image: "/miranda-fritz-NTvEVO77ris-unsplash.jpg",
@@ -71,7 +71,7 @@ const state = {
       }
     },
     {
-      page: 2,
+      subpage: 2,
       region: 'de',
       header: "Gemüse",
       image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
@@ -117,7 +117,7 @@ const state = {
       }
     },
     {
-      page: 3,
+      subpage: 3,
       region: 'de',
       header: "Salat",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
@@ -138,7 +138,7 @@ const state = {
       }
     },
     {
-      page: 4,
+      subpage: 4,
       region: 'de',
       header: "Kräuter",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",

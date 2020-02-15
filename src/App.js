@@ -115,7 +115,7 @@ function Content() {
         <title>Vegetably :: {t('Saisonkalender')}</title>
       </Helmet>
       <div className="content">
-      {state.paragraphs.map(i =>
+      {state.seasonalCalender.map(i =>
         <Paragraph text={i.header} image={i.image} table={i.table} multiLineText={i.text} />
       )}
       </div>
@@ -138,11 +138,7 @@ function E404 () {
   </>)
 }
 
-function ItemLink({text}) {
-  return (<h2>
-      <a href={`/${window.lang}/${text.toLowerCase()}`} >{text}</a>
-    </h2>)
-}
+
 
 function titleCase(str) {
   var splitStr = str.toLowerCase().split(' ');
@@ -165,6 +161,13 @@ function Item(props) {
   </>
 }
 
+/*
+function ItemLink({text}) {
+  return (<h2>
+      <a href={`/${window.lang}/${text.toLowerCase()}`} >{text}</a>
+    </h2>)
+}
+*/
 
 function Home({lang}) {
 
@@ -177,7 +180,8 @@ function Home({lang}) {
       </Helmet>
       <div className="content home">
         <Text value={state.home[lang].header} />
-        <ItemLink text={text} />
+        <Text value={text} tag='h2' />
+        {/* <ItemLink text={slugOf(text)} /> */}
         {/* <Image src={state.home[lang].image} className="home" /> */}
         <MultilineText value={state.home[lang].text} />
 
@@ -212,6 +216,7 @@ function About() {
   </>
   )
 }
+
 
 
 function App() {
