@@ -26,20 +26,20 @@ const state = {
       text: "To plan the next meal based on seasonal availability"
     },
     pl: {
-      header: "Vegetable of the month",
-      text: "To plan the next meal based on seasonal availability"
+      header: "Warzywo miesiąca",
+      text: "Aby zaplanować następny posiłek w zależności od sezonowości"
     },
     ja: {
-      header: "Vegetable of the month",
-      text: "To plan the next meal based on seasonal availability"
+      header: "今月の野菜",
+      text: "季節の空室状況に基づいて次の食事を計画するには"
     },
     el: {
-      header: "Vegetable of the month",
-      text: "To plan the next meal based on seasonal availability"
+      header: "Φυτικά του μήνα",
+      text: "Να προγραμματίσετε το επόμενο γεύμα με βάση την εποχική διαθεσιμότητα"
     },
     sv: {
-      header: "Vegetable of the month",
-      text: "To plan the next meal based on seasonal availability"
+      header: "Månadens grönsaker",
+      text: "Att planera nästa måltid baserat på säsongens tillgänglighet"
     }
   },
   paragraphs: [
