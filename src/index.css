@@ -190,6 +190,11 @@ button.btn  {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
+button.btn:hover  {
+  background-color:#CA753D;
+  color: #F2F3ED;
+}
+
 @media only screen and (max-width: 767px) {
   /* phones */
 	.label {
