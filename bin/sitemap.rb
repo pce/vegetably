@@ -1,6 +1,7 @@
 #!/bin/env ruby
 
 
+require 'date'
 require 'nokogiri'
 
 @urls = [
@@ -8,7 +9,14 @@ require 'nokogiri'
   {url:"/ja/seasonal-calendar"},
   {url:"/en/seasonal-calendar"},
   {url:"/el/seasonal-calendar"},
+  {url:"/pl/seasonal-calendar"},
+  {url:"/sv/seasonal-calendar"},
+  {url:"/de"},
+  {url:"/ja"},
   {url:"/en"},
+  {url:"/el"},
+  {url:"/pl"},
+  {url:"/sv"},
   {url:"/en/about"},
 ]
 
@@ -19,7 +27,7 @@ b = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
     @urls.each do |u|
       xml.url {
         xml.send(:"loc", @base_url + u[:url])
-        xml.send(:"lastmod", "2020-02-14")
+        xml.send(:"lastmod", DateTime.now.strftime("%Y-%m-%d"))
       }
     end
   }

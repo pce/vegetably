@@ -2,26 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vegetably.com/de/seasonal-calendar</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-17</lastmod>
   </url>
   <url>
     <loc>https://vegetably.com/ja/seasonal-calendar</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-17</lastmod>
   </url>
   <url>
     <loc>https://vegetably.com/en/seasonal-calendar</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-17</lastmod>
   </url>
   <url>
     <loc>https://vegetably.com/el/seasonal-calendar</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vegetably.com/pl/seasonal-calendar</loc>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vegetably.com/sv/seasonal-calendar</loc>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vegetably.com/de</loc>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vegetably.com/ja</loc>
+    <lastmod>2020-02-17</lastmod>
   </url>
   <url>
     <loc>https://vegetably.com/en</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vegetably.com/el</loc>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vegetably.com/pl</loc>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  <url>
+    <loc>https://vegetably.com/sv</loc>
+    <lastmod>2020-02-17</lastmod>
   </url>
   <url>
     <loc>https://vegetably.com/en/about</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-17</lastmod>
   </url>
 </urlset>
