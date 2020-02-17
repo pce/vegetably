@@ -176,12 +176,32 @@ img.home {
 
 }
 
+div.subnav {
+  margin-left:220px;
+}
+
+button.btn  {
+  color: #CA753D;
+  background-color: transparent;
+  outline:0;
+  border:1px solid #CA753D;
+  /* @include transition(background-color 0.3s ease); */
+  transition: all 0.3s ease-in-out;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
 @media only screen and (max-width: 767px) {
   /* phones */
 	.label {
 	  display: block;
-	}
-	/* todo "generic" .monthcell or .datacell 
+  }
+
+  div.subnav {
+    display:none;
+  }
+
+
+	/* todo "generic" .monthcell or .datacell
   .month, .inmonth , .outmonth  {
 		  width: 12px;
 		  font-size: 7px;

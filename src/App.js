@@ -119,7 +119,7 @@ const Navbar = () => {
     </div>
 
     {("/" + window.lang + "/seasonal-calendar" === window.location.pathname) && (
-    <div subnav>
+    <div className="subnav">
       <ul>
       {state.seasonalCalender.map(item => {
         return <button
@@ -127,7 +127,7 @@ const Navbar = () => {
         className="btn"
         onClick={() => handleSubPageClick(item.id)}
         >
-          {item.header}
+          {t(item.header)}
         </button>
         }
       )}
