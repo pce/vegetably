@@ -1,4 +1,3 @@
-
 import React, { Suspense } from "react"
 import {
   Switch,
@@ -8,17 +7,16 @@ import {
   useHistory
 } from "react-router-dom";
 
-// useEffect, useRef, useMemo
 import {Helmet} from "react-helmet";
 // import lerp from "lerp"
 import { Text } from "./components/text"
 import { MultilineText } from "./components/multiline_text"
-import state from "./store"
-import "./index.css"
+import { Table } from "./components/table"
 import Select from "./components/select"
+// import Image from "./components/image"
+import state from "./store"
 import t from "./t9n"
-
-
+import "./index.css"
 
 
 function Paragraph({text, image, table, multiLineText, index, id}) {
@@ -30,54 +28,6 @@ function Paragraph({text, image, table, multiLineText, index, id}) {
       {/* <MultilineText value={multiLineText} /> */}
     </div>
   )
-}
-
-// const Image = ({src, className=""}) => {
-//   return (<img src={src} className={className} />)
-// }
-
-const Table = ({data}) => {
-
-  const table = []
-  const cells = []
-  const curMonth = new Date().getMonth()
-  // Table Head
-  cells.push(<div className="cell label">{" "}</div>)
-  Array(12).fill(1).map((i, month)=> {
-    let classNames = ""
-    if (curMonth === month) {
-      classNames = "curmonth "
-    }
-    classNames += "cell month "
-    return cells.push(<div className={classNames}>{month+1}</div>)
-  })
-  table.push (<div className="row">{cells}</div>)
-  // Table Data
-  Object.keys(data).map((val, index) => {
-      const cells = []
-      cells.push(<div className="cell label">{t(val)}</div>)
-
-      let months = data[val][0]
-      let inmonths = data[val][1]
-
-      Array(12).fill(1).map((i, month)=> {
-        let classNames  = "cell "
-        if (months.includes(month+1)) {
-          classNames += "outmonth "
-        } else if (inmonths.includes(month+1)) {
-          classNames += "inmonth "
-        } else {
-          if (curMonth === month) {
-            classNames += "curmonth "
-          }
-          classNames += "month "
-        }
-        return cells.push(<div className={classNames}>{" "}</div>)
-      })
-      return table.push (<div className="row">{cells}</div>)
-    }
-  )
-  return <div className="table">{table}</div>
 }
 
 
@@ -102,7 +52,6 @@ const Navbar = () => {
     })
   }
 
-  // XXX global lang
   return (<>
     <div className="nav">
       <h1 className="brand"><Link to={"/" + window.lang}>Vegetably</Link></h1>
@@ -139,8 +88,7 @@ const Navbar = () => {
   </>)
 }
 
-function Content() {
-  // <link rel="canonical" href="https://vegetably.com/{lang}/" />
+function SeasonalCalender() {
   return (
     <>
       <Helmet>
@@ -171,8 +119,6 @@ function E404 () {
 }
 
 
-
-
 function Item(props) {
   const name = t(props.match.params.name)
   if (!name) {
@@ -193,7 +139,7 @@ function ItemLink({text}) {
 
 function Home({lang}) {
 
-  let text = t(state.home.teaser_month[new Date().getMonth()].text)
+  const text = t(state.home.teaser_month[new Date().getMonth()].text)
 
   return (
     <>
@@ -206,7 +152,6 @@ function Home({lang}) {
         {/* <ItemLink text={slugOf(text)} /> */}
         {/* <Image src={state.home[lang].image} className="home" /> */}
         <MultilineText value={state.home[lang].text} />
-
       </div>
       <footer className="bottom-left">&copy; 2020 vegetably.com</footer>
     </>
@@ -241,7 +186,6 @@ function About() {
 }
 
 
-
 function App() {
 
   let { lang } = useParams();
@@ -255,30 +199,24 @@ function App() {
     }
   }
 
-  // const scrollArea = useRef()
-  // const onScroll = e => (state.top.current = e.target.scrollTop)
-  // useEffect(() => void onScroll({ target: scrollArea.current }), [])
   return (
-    <>
-      <Suspense fallback={<div center className="loading" children="Loading..." />}>
-          <Navbar  />
-            <Switch>
-              <Route path="/:lang/seasonal-calendar">
-                <Content />
-              </Route>
-              <Route path="/:lang/about">
-                <About />
-              </Route>
-              <Route path="/:lang/:name" component={Item} />
-              <Route path="/:lang?">
-                <Home lang={lang} />
-              </Route>
-            </Switch>
-      </Suspense>
-    </>
+    <Suspense fallback={<div center className="loading" children="Loading..." />}>
+        <Navbar  />
+          <Switch>
+            <Route path="/:lang/seasonal-calendar">
+              <SeasonalCalender />
+            </Route>
+            <Route path="/:lang/about">
+              <About />
+            </Route>
+            <Route path="/:lang/:name" component={Item} />
+            <Route path="/:lang?">
+              <Home lang={lang} />
+            </Route>
+          </Switch>
+    </Suspense>
   )
 }
-
 
 
 export default App
