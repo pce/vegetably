@@ -1,7 +1,7 @@
 import { createRef } from "react"
 
 const state = {
-  pages: 3,
+  pages: ['home', 'about', 'seasonalCalender'],
   home: {
     teaser_month: {
       0:  {text: 'Chicorée'},
@@ -42,13 +42,94 @@ const state = {
       text: "Att planera nästa måltid baserat på säsongens tillgänglighet"
     }
   },
+  /*
+  // draft
+  about: {
+    de: {
+      header: "About",
+      paragraphs: [
+        {text: {value:"disclaimer", tag:'h2'}},
+        {text: {value:'The information contained in this website is for general information purposes only.'
+      +
+      '\nThe information is provided by "vegetably.com" and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.'
+      +
+      '\nIn no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.'
+      +
+      '\nThrough this website you are able to link to other websites which are not under the control of "vegetably.com". We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
+      +
+      '\nEvery effort is made to keep the website up and running smoothly. However, "vegetably.com" takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.',
+        }}]
+    },
+    en: {
+      header: "About",
+      text: 'The information contained in this website is for general information purposes only.'
+      +
+      '\nThe information is provided by "vegetably.com" and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.'
+      +
+      '\nIn no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.'
+      +
+      '\nThrough this website you are able to link to other websites which are not under the control of "vegetably.com". We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
+      +
+      '\nEvery effort is made to keep the website up and running smoothly. However, "vegetably.com" takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.',
+    },
+    pl: {
+      header: "About",
+      text: 'The information contained in this website is for general information purposes only.'
+      +
+      '\nThe information is provided by "vegetably.com" and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.'
+      +
+      '\nIn no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.'
+      +
+      '\nThrough this website you are able to link to other websites which are not under the control of "vegetably.com". We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
+      +
+      '\nEvery effort is made to keep the website up and running smoothly. However, "vegetably.com" takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.',
+    },
+    ja: {
+      header: "About",
+      text: 'The information contained in this website is for general information purposes only.'
+      +
+      '\nThe information is provided by "vegetably.com" and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.'
+      +
+      '\nIn no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.'
+      +
+      '\nThrough this website you are able to link to other websites which are not under the control of "vegetably.com". We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
+      +
+      '\nEvery effort is made to keep the website up and running smoothly. However, "vegetably.com" takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.',
+    },
+    el: {
+      header: "About",
+      text: 'The information contained in this website is for general information purposes only.'
+      +
+      '\nThe information is provided by "vegetably.com" and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.'
+      +
+      '\nIn no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.'
+      +
+      '\nThrough this website you are able to link to other websites which are not under the control of "vegetably.com". We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
+      +
+      '\nEvery effort is made to keep the website up and running smoothly. However, "vegetably.com" takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.',
+    },
+    sv: {
+      header: "About",
+      text: 'The information contained in this website is for general information purposes only.'
+      +
+      '\nThe information is provided by "vegetably.com" and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.'
+      +
+      '\nIn no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.'
+      +
+      '\nThrough this website you are able to link to other websites which are not under the control of "vegetably.com". We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.'
+      +
+      '\nEvery effort is made to keep the website up and running smoothly. However, "vegetably.com" takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.',
+    }
+
+  },*/
   seasonalCalender: [
     {
-      subpage: 1,
-      region: 'de',
+      subpage1: createRef(),
+      id: "subpage1",
       header: "Obst",
       image: "/miranda-fritz-NTvEVO77ris-unsplash.jpg",
       text: "Welches Obst hat wann Saison, \nregional und saisonal...",
+      // TODO make tables with regions switch, not country or language
       table: {
         'Apfel':	[[8,9,10,11],[1,2,3,4,5,12]],
         'Aprikose':	[[7,8],[]],
@@ -71,8 +152,8 @@ const state = {
       }
     },
     {
-      subpage: 2,
-      region: 'de',
+      subpage2: createRef(),
+      id: "subpage2",
       header: "Gemüse",
       image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       text: "Welches Gemüse hat wann Saison, \nregional und saisonal...",
@@ -117,8 +198,8 @@ const state = {
       }
     },
     {
-      subpage: 3,
-      region: 'de',
+      subpage3: createRef(),
+      id: "subpage3",
       header: "Salat",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
       text: "Welcher Salat hat wann Saison, \nregional und saisonal...",
@@ -138,8 +219,8 @@ const state = {
       }
     },
     {
-      subpage: 4,
-      region: 'de',
+      subpage4: createRef(),
+      id: "subpage4",
       header: "Kräuter",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
       text: "Welches Kraut hat wann Saison, \nregional und saisonal...",
@@ -154,7 +235,6 @@ const state = {
       }
     },
   ],
-  top: createRef()
 }
 
 export default state

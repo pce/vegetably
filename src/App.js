@@ -19,9 +19,11 @@ import Select from "./components/select"
 import t from "./t9n"
 
 
-function Paragraph({text, image, table, multiLineText}) {
+
+
+function Paragraph({text, image, table, multiLineText, index, id}) {
   return (
-    <div className="paragraph">
+    <div className="paragraph" ref={state.seasonalCalender[index][id]} >
       <Text value={t(text)} />
       {/* <Image src={image} /> */}
       <Table data={table} />
@@ -79,13 +81,24 @@ const Table = ({data}) => {
 }
 
 
-const Navbar = ({lang}) => {
+const Navbar = () => {
   let history = useHistory();
 
   const onLangChange = (event) => {
     window.lang = event.target.value
     let url = '/' + window.lang + window.location.pathname.substring(3)
     history.push(url);
+  }
+
+  const handleSubPageClick = id => {
+    {state.seasonalCalender.map(item => {
+      if (item.id == id) {
+        item[item.id].current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    })}
   }
 
   // XXX global lang
@@ -104,6 +117,24 @@ const Navbar = ({lang}) => {
         </nav>
       <Select options={{de:'de', en:'en', el:'el', ja:'ja', pl:'pl', sv:'sv'}} onChange={onLangChange} className='nav__lang'  />
     </div>
+
+    {("/" + window.lang + "/seasonal-calendar" === window.location.pathname) && (
+    <div subnav>
+      <ul>
+      {state.seasonalCalender.map(item => {
+        return <button
+        type="button"
+        className="btn"
+        onClick={() => handleSubPageClick(item.id)}
+        >
+          {item.header}
+        </button>
+        }
+      )}
+      </ul>
+    </div>
+    )}
+
   </>)
 }
 
@@ -115,8 +146,8 @@ function Content() {
         <title>Vegetably :: {t('Saisonkalender')}</title>
       </Helmet>
       <div className="content">
-      {state.seasonalCalender.map(i =>
-        <Paragraph text={i.header} image={i.image} table={i.table} multiLineText={i.text} />
+      {state.seasonalCalender.map((item, index) =>
+        <Paragraph id={item.id} index={index} text={item.header} image={item.image} table={item.table} multiLineText={item.text} />
       )}
       </div>
       <footer className="bottom-left">&copy; 2020 vegetably.com</footer>
@@ -193,6 +224,7 @@ function Home({lang}) {
 
 function About() {
   // <link rel="canonical" href="https://vegetably.com/" />
+  // TODO load content by slug/url
   return (<>
     <Helmet>
       <title>Vegetably :: {t('About')}</title>
@@ -232,13 +264,14 @@ function App() {
     }
   }
 
+
   // const scrollArea = useRef()
   // const onScroll = e => (state.top.current = e.target.scrollTop)
   // useEffect(() => void onScroll({ target: scrollArea.current }), [])
   return (
     <>
       <Suspense fallback={<div center className="loading" children="Loading..." />}>
-          <Navbar lang={lang} />
+          <Navbar  />
             <Switch>
               <Route path="/:lang/seasonal-calendar">
                 <Content />
