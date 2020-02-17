@@ -120,7 +120,6 @@ const state = {
       +
       '\nEvery effort is made to keep the website up and running smoothly. However, "vegetably.com" takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.',
     }
-
   },*/
   seasonalCalender: [
     {

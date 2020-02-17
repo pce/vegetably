@@ -185,7 +185,6 @@ button.btn  {
   background-color: transparent;
   outline:0;
   border:1px solid #CA753D;
-  /* @include transition(background-color 0.3s ease); */
   transition: all 0.3s ease-in-out;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
 }

@@ -91,14 +91,15 @@ const Navbar = () => {
   }
 
   const handleSubPageClick = id => {
-    {state.seasonalCalender.map(item => {
-      if (item.id == id) {
+    state.seasonalCalender.map(item => {
+      if (item.id === id) {
         item[item.id].current.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         });
       }
-    })}
+      return item
+    })
   }
 
   // XXX global lang
@@ -171,19 +172,9 @@ function E404 () {
 
 
 
-function titleCase(str) {
-  var splitStr = str.toLowerCase().split(' ');
-  for (var i = 0; i < splitStr.length; i++) {
-      // You do not need to check if i is larger than splitStr length, as your for does that for you
-      // Assign it back to the array
-      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-  }
-  // Directly return the joined string
-  return splitStr.join(' ');
-}
 
 function Item(props) {
-  const name = t(titleCase(props.match.params.name))
+  const name = t(props.match.params.name)
   if (!name) {
     return <E404 />
   }
@@ -263,7 +254,6 @@ function App() {
       window.lang = lang
     }
   }
-
 
   // const scrollArea = useRef()
   // const onScroll = e => (state.top.current = e.target.scrollTop)
