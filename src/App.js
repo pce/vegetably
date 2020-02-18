@@ -47,6 +47,7 @@ const Navbar = () => {
         behavior: 'smooth',
         block: 'start',
       });
+      return
     }
 
     state.seasonalCalender.map(item => {
@@ -89,7 +90,7 @@ const Navbar = () => {
         return <button
         type="button"
         className="btn"
-        onClick={() => handleSubPageClick('top')}
+        onClick={() => handleSubPageClick(item.id)}
         >
           {t(item.header)}
         </button>

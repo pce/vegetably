@@ -194,7 +194,7 @@ button.btn:hover  {
   color: #F2F3ED;
 }
 
-button.btn__float{
+button.btn__float {
   position: fixed;
   bottom: 10px;
   float: right;
