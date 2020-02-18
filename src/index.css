@@ -194,6 +194,19 @@ button.btn:hover  {
   color: #F2F3ED;
 }
 
+button.btn__float{
+  position: fixed;
+  bottom: 10px;
+  float: right;
+  right: 12%;
+  left: 80%;
+  max-width: 30px;
+  width: 100%;
+  font-size: 12px;
+  padding: .5px;
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 767px) {
   /* phones */
 	.label {

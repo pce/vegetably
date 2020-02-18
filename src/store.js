@@ -234,6 +234,7 @@ const state = {
       }
     },
   ],
+  top: createRef(),
 }
 
 export default state

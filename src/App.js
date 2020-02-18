@@ -41,6 +41,14 @@ const Navbar = () => {
   }
 
   const handleSubPageClick = id => {
+
+    if (id === 'top') {
+      state.top.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+
     state.seasonalCalender.map(item => {
       if (item.id === id) {
         item[item.id].current.scrollIntoView({
@@ -53,7 +61,7 @@ const Navbar = () => {
   }
 
   return (<>
-    <div className="nav">
+    <div className="nav" ref={state.top}>
       <h1 className="brand"><Link to={"/" + window.lang}>Vegetably</Link></h1>
         <nav>
           <ul>
@@ -67,7 +75,13 @@ const Navbar = () => {
         </nav>
       <Select options={{de:'de', en:'en', el:'el', ja:'ja', pl:'pl', sv:'sv'}} onChange={onLangChange} className='nav__lang'  />
     </div>
-
+    <button
+      type="button"
+      className="btn btn__float"
+      onClick={() => handleSubPageClick('top')}
+      >
+        {'^'}
+    </button>
     {("/" + window.lang + "/seasonal-calendar" === window.location.pathname) && (
     <div className="subnav">
       <ul>
@@ -75,7 +89,7 @@ const Navbar = () => {
         return <button
         type="button"
         className="btn"
-        onClick={() => handleSubPageClick(item.id)}
+        onClick={() => handleSubPageClick('top')}
         >
           {t(item.header)}
         </button>
