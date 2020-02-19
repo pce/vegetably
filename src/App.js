@@ -104,6 +104,7 @@ const Navbar = () => {
 }
 
 function SeasonalCalender() {
+  const regionIndex = 0
   return (
     <>
       <Helmet>
@@ -111,7 +112,7 @@ function SeasonalCalender() {
       </Helmet>
       <div className="content">
       {state.seasonalCalender.map((item, index) =>
-        <Paragraph id={item.id} index={index} text={item.header} image={item.image} table={item.table} multiLineText={item.text} />
+        <Paragraph id={item.id} index={index} text={item.header} image={item.image} table={item.table[regionIndex]} multiLineText={item.text} />
       )}
       </div>
       <footer className="bottom-left">&copy; 2020 vegetably.com</footer>

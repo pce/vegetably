@@ -129,26 +129,28 @@ const state = {
       image: "/miranda-fritz-NTvEVO77ris-unsplash.jpg",
       text: "Welches Obst hat wann Saison, \nregional und saisonal...",
       // TODO make tables with regions switch, not country or language
-      table: {
-        'Apfel':	[[8,9,10,11],[1,2,3,4,5,12]],
-        'Aprikose':	[[7,8],[]],
-        'Birne':	[[8,9,10],[11,12]],
-        'Blaubeeren / Heidelbeeren':	[[6,7,8,9],[]],
-        'Brombeeren':	[[7,8,9],[]],
-        'Erdbeeren':	[[5,6,7],[]],
-        'Himbeeren':	[[6,7,8],[]],
-        'Holunderbeeren / Flieder':	[[9,10],[]],
-        'Johannisbeeren':	[[6,7,8],[]],
-        'Kirschen':	[[6,7,8],[]],
-        'Mirabellen':	[[7,8,9],[]],
-        'Pflaumen':	[[7,8,9],[]],
-        'Quitten':	[[9,10,11],[]],
-        'Rhabarber':	[[4,5,6],[]],
-        'Stachelbeeren':	[[6,7,8],[]],
-        'Wassermelonen':	[[8,9],[]],
-        'Weintrauben':	[[9,10,11],[]],
-        'Zwetschgen':	[[7,8,9,10],[]],
-      }
+      table: [
+        {
+          'Apfel':	[[8,9,10,11],[1,2,3,4,5,12]],
+          'Aprikose':	[[7,8],[]],
+          'Birne':	[[8,9,10],[11,12]],
+          'Blaubeeren / Heidelbeeren':	[[6,7,8,9],[]],
+          'Brombeeren':	[[7,8,9],[]],
+          'Erdbeeren':	[[5,6,7],[]],
+          'Himbeeren':	[[6,7,8],[]],
+          'Holunderbeeren / Flieder':	[[9,10],[]],
+          'Johannisbeeren':	[[6,7,8],[]],
+          'Kirschen':	[[6,7,8],[]],
+          'Mirabellen':	[[7,8,9],[]],
+          'Pflaumen':	[[7,8,9],[]],
+          'Quitten':	[[9,10,11],[]],
+          'Rhabarber':	[[4,5,6],[]],
+          'Stachelbeeren':	[[6,7,8],[]],
+          'Wassermelonen':	[[8,9],[]],
+          'Weintrauben':	[[9,10,11],[]],
+          'Zwetschgen':	[[7,8,9,10],[]],
+        }
+      ]
     },
     {
       subpage2: createRef(),
@@ -156,7 +158,7 @@ const state = {
       header: "Gemüse",
       image: "/jodie-morgan-v25z8P-CPB4-unsplash.jpg",
       text: "Welches Gemüse hat wann Saison, \nregional und saisonal...",
-      table: {
+      table: [{
         'Aubergine': [[7,8,9,10],[]],
         'Blumenkohl': [[5,6,7,8,9,10],[]],
         'Bohnen (grün)': [[7,8,9,10],[]],
@@ -194,7 +196,7 @@ const state = {
         'Zucchini': [[6,7,8,9],[]],
         'Zuckerschoten': [[6,7,8],[]],
         'Zwiebeln': [[7,8,9,10],[1,2,3,4,5,6,11,12]],
-      }
+      }]
     },
     {
       subpage3: createRef(),
@@ -202,7 +204,7 @@ const state = {
       header: "Salat",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
       text: "Welcher Salat hat wann Saison, \nregional und saisonal...",
-      table: {
+      table: [{
         'Batavia': [[5,6,7,8,9], []],
         'Chicorée': [[1,2,3,4,10,11,12], []],
         'Eichblattsalat': [[5,6,7,8,9,10], []],
@@ -215,7 +217,7 @@ const state = {
         'Radicchio': [[8,9,10,11], [12,1,2]],
         'Romana': [[6,7,8,9,10,11], []],
         'Rucola': [[4,5,6,7,8,9], []],
-      }
+      }]
     },
     {
       subpage4: createRef(),
@@ -223,7 +225,7 @@ const state = {
       header: "Kräuter",
       image: "/agence-producteurs-locaux-damien-kuhn-fd05H8aHoXY-unsplash.jpg",
       text: "Welches Kraut hat wann Saison, \nregional und saisonal...",
-      table: {
+      table: [{
         'Dill': [[6,7,8], []],
         'Majoran': [[6,7], []],
         'Minze': [[1,2,3,4,5,6,7,8,9,10,11,12], []],
@@ -231,7 +233,7 @@ const state = {
         'Rosmarin': [[6,7,8,9], []],
         'Schnittlauch': [[3,4,5,6,7,8,9], []],
         'Thymian': [[5,6,7,8,9], []],
-      }
+      }]
     },
   ],
   top: createRef(),
