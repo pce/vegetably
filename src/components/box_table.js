@@ -3,7 +3,7 @@ import React from 'react'
 import t from "../t9n"
 
 
-const Table = ({data}) => {
+const BoxTable = ({data}) => {
   const table = []
   const cells = []
   const curMonth = new Date().getMonth()
@@ -43,4 +43,4 @@ const Table = ({data}) => {
   return <div className="table">{table}</div>
 }
 
-export { Table }
+export { BoxTable }
