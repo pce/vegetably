@@ -36,7 +36,6 @@ const Navbar = () => {
   // const onRegionChange = event => {}
 
   const handleSubPageClick = id => {
-
     if (id === 'top') {
       state.top.current.scrollIntoView({
         behavior: 'smooth',
@@ -44,7 +43,6 @@ const Navbar = () => {
       });
       return
     }
-
     state.seasonalCalender.map(item => {
       if (item.id === id) {
         item[item.id].current.scrollIntoView({
@@ -55,7 +53,6 @@ const Navbar = () => {
       return item
     })
   }
-
 
   return (<>
     <div className="nav" ref={state.top}>
@@ -97,7 +94,6 @@ const Navbar = () => {
       </ul>
     </div>
     )}
-
   </>)
 }
 
@@ -118,18 +114,18 @@ function App() {
   return (
     <Suspense fallback={<div center className="loading" children="Loading..." />}>
         <Navbar  />
-          <Switch>
-            <Route path="/:lang/seasonal-calendar">
-              <SeasonalCalenderPage />
-            </Route>
-            <Route path="/:lang/about">
-              <AboutPage />
-            </Route>
-            <Route path="/:lang/:name" component={ArticlePage} />
-            <Route path="/:lang?">
-              <HomePage lang={lang} />
-            </Route>
-          </Switch>
+        <Switch>
+          <Route path="/:lang/seasonal-calendar">
+            <SeasonalCalenderPage />
+          </Route>
+          <Route path="/:lang/about">
+            <AboutPage />
+          </Route>
+          <Route path="/:lang/:name" component={ArticlePage} />
+          <Route path="/:lang?">
+            <HomePage lang={lang} />
+          </Route>
+        </Switch>
     </Suspense>
   )
 }

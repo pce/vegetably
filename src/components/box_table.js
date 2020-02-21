@@ -9,7 +9,7 @@ const BoxTable = ({data}) => {
   const curMonth = new Date().getMonth()
   // Table Head
   cells.push(<div className="cell label">{" "}</div>)
-  Array(12).fill(1).map((i, month)=> {
+  Array(12).fill(1).map((_, month)=> {
     let classNames = ""
     if (curMonth === month) {
       classNames = "curmonth "

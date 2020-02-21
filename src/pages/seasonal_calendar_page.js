@@ -2,6 +2,7 @@ import React from 'react'
 import {Helmet} from "react-helmet";
 import { Text } from "../components/text"
 import { BoxTable } from "../components/box_table"
+// import { BoxFloatTable } from "../components/box_float_table"
 
 import t from "../t9n"
 import state from "../store"
@@ -11,6 +12,7 @@ const Paragraph = ({text, image, table, multiLineText, index, id}) => {
     <div className="paragraph" ref={state.seasonalCalender[index][id]} >
       <Text value={t(text)} />
       {/* <Image src={image} /> */}
+      {/* <BoxFloatTable data={table} /> */}
       <BoxTable data={table} />
       {/* <MultilineText value={multiLineText} /> */}
     </div>
