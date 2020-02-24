@@ -8,7 +8,9 @@ import {
 } from "react-router-dom";
 
 // import lerp from "lerp"
-import Select from "./components/select"
+// import Select from "./components/select"
+import Select from 'react-select'
+
 
 import AboutPage from "./pages/about_page";
 import ArticlePage from "./pages/article_page";
@@ -26,9 +28,11 @@ const Navbar = () => {
   let history = useHistory();
 
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const onLangChange = (event) => {
-    window.lang = event.target.value
+  const onLangChange = selectedOption => {
+    window.lang = selectedOption.value
+    setSelectedOption(selectedOption)
     let url = '/' + window.lang + window.location.pathname.substring(3)
     history.push(url);
   }
@@ -54,6 +58,15 @@ const Navbar = () => {
     })
   }
 
+  const options = [
+    { value: 'de', label: 'de' },
+    { value: 'en', label: 'en' },
+    { value: 'el', label: 'el' },
+    { value: 'ja', label: 'ja' },
+    { value: 'pl', label: 'pl' },
+    { value: 'sv', label: 'sv' }
+  ]
+
   return (<>
     <div className="nav" ref={state.top}>
       <h1 className="brand"><Link to={"/" + window.lang}>Vegetably</Link></h1>
@@ -68,7 +81,23 @@ const Navbar = () => {
           </ul>
         </nav>
         <BurgerIcon  onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} className={isMobileNavOpen?'open':''}   />
-      <Select options={{de:'de', en:'en', el:'el', ja:'ja', pl:'pl', sv:'sv'}} onChange={onLangChange} className='nav__lang'  />
+
+        <div className='nav__lang' >
+          <Select
+          value={selectedOption}
+          onChange={onLangChange}
+          options={options}
+          theme={theme => ({
+            ...theme,
+            borderRadius: 0,
+            colors: {
+              ...theme.colors,
+              primary25: '#B2705A',
+              primary: '#3C4C4F',
+            },
+          })}
+        /></div>
+
     </div>
     <button
       type="button"

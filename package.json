@@ -12,6 +12,7 @@
     "react-helmet": "^5.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
+    "react-select": "^3.0.8",
     "react-three-fiber": "^4.0.16",
     "three": "^0.113.2"
   },
