@@ -142,42 +142,6 @@ select {
   padding:none;
 }
 
-.table {display:block; }
-.row {
-  display:block;
-  background-color:none;
-}
-.row:hover {   background-color:#fff; }
-
-.cell {display:inline-block;}
-
-.label { width: 240px; }
-
-.inmonth {
-  background-color:#B2705A;
-  border: #B2705A 1px solid;
-  width: 22px;
-  height: 12px;
-}
-
-.outmonth {
-  background-color:#CA753D;
-  border: #CA753D 1px solid;
-  width: 22px;
-  height: 12px;
-}
-
-.month {
-  background-color:none;
-  border: transparent 1px #3C4C4F;
-  width: 22px;
-  height: 12px;
-  font-size: 8px;
-}
-
-.curmonth {
-  background-color:white;
-}
 
 /* @component box_float_table */
 .boxtable__cell__current {
@@ -203,8 +167,21 @@ select {
 }
 .boxtable__row:hover {   background-color:#fff; }
 
-/* ... */
+.boxtable__cell__first {
+  background-color:#B2705A;
+  border: #B2705A 1px solid;
+  width: 22px;
+  height: 12px;
+}
 
+.boxtable__cell__second {
+  background-color:#CA753D;
+  border: #CA753D 1px solid;
+  width: 22px;
+  height: 12px;
+}
+
+/* ... */
 
 img.home {
   max-height: 40%;
@@ -266,11 +243,10 @@ button.btn__float {
   }
 
   .nav nav ul li {
-
     padding-right: 12px;
     padding: 12px;
     border: 1px solid #CA753D;
-}
+  }
 
   nav#main {
     display: none;
@@ -287,13 +263,4 @@ button.btn__float {
     background-color: #fff;
   }
 
-
-
-
-	/* todo "generic" .monthcell or .datacell
-  .month, .inmonth , .outmonth  {
-		  width: 12px;
-		  font-size: 7px;
-  }
-	*/
 }
