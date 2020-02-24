@@ -179,6 +179,33 @@ select {
   background-color:white;
 }
 
+/* @component box_float_table */
+.boxtable__cell__current {
+  background-color:white;
+}
+
+.boxtable__cell {display:inline-block;}
+
+.boxtable__cell__label { width: 240px; }
+
+.boxtable__cell__value {
+  background-color:none;
+  border: transparent 1px #3C4C4F;
+  width: 22px;
+  height: 12px;
+  font-size: 8px;
+}
+
+.boxtable__table {display:block; }
+.boxtable__row {
+  display:block;
+  background-color:none;
+}
+.boxtable__row:hover {   background-color:#fff; }
+
+/* ... */
+
+
 img.home {
   max-height: 40%;
   max-width: 40%;

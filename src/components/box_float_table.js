@@ -8,43 +8,41 @@ import t from "../t9n"
   }]
 */
 
-const BoxFloatTable = ({data}) => {
+const BoxFloatTable = ({data, selected, size=12}) => {
   const table = []
   const cells = []
   // 12 months
-  const xCells = 12
-  // const currentCell = data.current
-  const curMonth = new Date().getMonth()
+  const xCells = size
   // Table Head
-  cells.push(<div className="cell label">{" "}</div>)
+  cells.push(<div className="boxtable__cell boxtable__cell__label">{" "}</div>)
   // default Header 1,2,3,...
-  Array(xCells).fill(1).map((_, month)=> {
+  Array(xCells).fill(1).map((_, index)=> {
     let classNames = ""
-    if (curMonth === month) {
-      classNames = "curmonth "
+    if (selected === index) {
+      classNames = "boxtable__cell__current "
     }
-    classNames += "cell month "
-    return cells.push(<div className={classNames}>{month+1}</div>)
+    classNames += "boxtable__cell boxtable__cell__value "
+    return cells.push(<div className={classNames}>{index+1}</div>)
   })
-  table.push (<div className="row">{cells}</div>)
+  table.push (<div className="boxtable__row">{cells}</div>)
   // Table Data
   Object.keys(data).map((val, index) => {
     const cells = []
-    cells.push(<div className="cell label">{t(val)}</div>)
+    cells.push(<div className="boxtable__cell boxtable__cell__label">{t(val)}</div>)
     // 2 arrays, 1st array values first
-    let months = data[val][0]
-    let inmonths = data[val][1]
-    Array(xCells).fill(1).map((i, month)=> {
+    let values = data[val][0]
+    let invalues = data[val][1]
+    Array(xCells).fill(1).map((_, index)=> {
       let height = 0
       let classNames  = "cell "
-      if (curMonth === month) {
+      if (selected === index) {
         classNames += "curmonth "
       }
-      if (typeof months[month] !== 'undefined' && months[month] > 0) {
-        height = months[month] * 12
+      if (typeof values[index] !== 'undefined' && values[index] > 0) {
+        height = values[index] * 12
         classNames += "outmonth "
-      } else if (typeof inmonths[month] !== 'undefined' && inmonths[month] > 0) {
-        height = inmonths[month] * 12
+      } else if (typeof invalues[index] !== 'undefined' && invalues[index] > 0) {
+        height = invalues[index] * 12
         classNames += "inmonth "
       } else {
         classNames += "month "
@@ -55,9 +53,9 @@ const BoxFloatTable = ({data}) => {
         return cells.push(<div className={classNames} >{" "}</div>)
       }
     })
-    return table.push (<div className="row">{cells}</div>)
+    return table.push (<div className="boxtable__row">{cells}</div>)
   })
-  return <div className="table">{table}</div>
+  return <div className="boxtable__table">{table}</div>
 }
 
 export { BoxFloatTable }

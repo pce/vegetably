@@ -8,12 +8,15 @@ import t from "../t9n"
 import state from "../store"
 
 const Paragraph = ({text, image, table, multiLineText, index, id}) => {
+
+  const currentMonth = new Date().getMonth()
+
   return (
     <div className="paragraph" ref={state.seasonalCalender[index][id]} >
       <Text value={t(text)} />
       {/* <Image src={image} /> */}
-      {/* <BoxFloatTable data={table} /> */}
-      <BoxTable data={table} />
+      {/* <BoxFloatTable data={table} selected={currentMonth} /> */}
+      <BoxTable data={table} selected={currentMonth}   />
       {/* <MultilineText value={multiLineText} /> */}
     </div>
   )

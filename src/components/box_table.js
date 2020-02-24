@@ -3,38 +3,38 @@ import React from 'react'
 import t from "../t9n"
 
 
-const BoxTable = ({data}) => {
+const BoxTable = ({data, selected, size=12}) => {
   const table = []
   const cells = []
-  const curMonth = new Date().getMonth()
+  const xCells = size
   // Table Head
-  cells.push(<div className="cell label">{" "}</div>)
-  Array(12).fill(1).map((_, month)=> {
+  cells.push(<div className="boxtable__cell boxtable__cell__label">{" "}</div>)
+  Array(xCells).fill(1).map((_, index)=> {
     let classNames = ""
-    if (curMonth === month) {
-      classNames = "curmonth "
+    if (selected === index) {
+      classNames = "boxtable__cell__current "
     }
-    classNames += "cell month "
-    return cells.push(<div className={classNames}>{month+1}</div>)
+    classNames += "boxtable__cell month "
+    return cells.push(<div className={classNames}>{index+1}</div>)
   })
-  table.push (<div className="row">{cells}</div>)
+  table.push (<div className="boxtable__row">{cells}</div>)
   // Table Data
-  Object.keys(data).map((val, index) => {
+  Object.keys(data).map((val, _) => {
     const cells = []
-    cells.push(<div className="cell label">{t(val)}</div>)
-    let months = data[val][0]
-    let inmonths = data[val][1]
-    Array(12).fill(1).map((i, month)=> {
+    cells.push(<div className="boxtable__cell boxtable__cell__label">{t(val)}</div>)
+    let values = data[val][0]
+    let invalues = data[val][1]
+    Array(xCells).fill(1).map((_, index)=> {
       let classNames  = "cell "
-      if (months.includes(month+1)) {
+      if (values.includes(index+1)) {
         classNames += "outmonth "
-      } else if (inmonths.includes(month+1)) {
+      } else if (invalues.includes(index+1)) {
         classNames += "inmonth "
       } else {
-      if (curMonth === month) {
-        classNames += "curmonth "
-      }
-      classNames += "month "
+        if (selected === index) {
+          classNames += "curmonth "
+        }
+        classNames += "month "
       }
       return cells.push(<div className={classNames}>{" "}</div>)
     })
