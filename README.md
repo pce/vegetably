@@ -1,4 +1,5 @@
 
+![CI](https://github.com/pce/vegetably/workflows/CI/badge.svg)
 
 
 ## Additional directives for HTTP(S)
